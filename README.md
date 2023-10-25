@@ -24,9 +24,9 @@ To get started with the Python client, follow these steps:
 
 3. Select "Get CLI/SDK config."
 
-4. You will receive the SDK configuration that is needed to interact with AkriData's services. Make sure to keep this configuration file secure.
+4. You can copy the SDK configuration that is needed to interact with AkriData's services. Make sure to keep this configuration secure.
 
-### Step 3: Set Up Your Environment
+### Step 3: Set up your environment
 
 #### Prerequisites
 
