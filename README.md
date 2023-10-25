@@ -33,7 +33,7 @@ To get started with the Python client, follow these steps:
 - Python version 3.8 or higher is required to run the examples in this repository.
 - We recommend using a virtual environment to manage your Python dependencies.
 
-Once you have Follow the steps in the previous section, clone this repository. Once you have the SDK configuration, you can start using the client to interact with AkriData's Data Explorer platform.
+Once you have followed the steps in the previous section, clone this repository. Once you have the SDK configuration, you can start using the client to interact with AkriData's Data Explorer platform.
 
 ## Notebooks
 
