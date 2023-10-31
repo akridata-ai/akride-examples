@@ -25,15 +25,8 @@ print(f"Dataset {dataset.get_name()} created successfully with ID {dataset.get_i
 
 # Process images:
 path_to_images = "/home/ubuntu/akride-examples/dataset/cat-dog-bird/"
-# path_to_images = "C:\\Users\\alexb\\Documents\\akride-examples\\dataset\\cat-dog-bird\\"
-#
-# import os
-# image_data_dir = "../dataset/cat-dog-bird/bird"
-# pp = os.path.abspath(os.path.join(os.getcwd(), image_data_dir))
-# print(f"processing path {pp}")
-# task = client.ingest_dataset(dataset=dataset, data_directory=os.path.abspath(os.path.join(os.getcwd(), image_data_dir)))
 task = client.ingest_dataset(dataset=dataset, data_directory=path_to_images)
 while not task.has_completed():
     print(f"Current progress:{task.get_progress_info().percent_completed}%")
     time.sleep(5)
-print("done")
+print("Dataset ingestion done")
