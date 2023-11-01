@@ -5,7 +5,7 @@ from PIL import Image
 from akride import AkriDEClient, JobContext
 
 
-def display_grid(n_rows: int, n_cols: int, images: list[Image.Image], size: int, id: int):
+def display_grid(n_rows: int, n_cols: int, images: list[Image.Image], size: int, cluster_id: int):
     """Display a grid of n_rows x n_cols of images"""
     assert len(images) <= n_rows * n_cols
     fig = plt.figure(figsize=(size, size))
@@ -15,7 +15,7 @@ def display_grid(n_rows: int, n_cols: int, images: list[Image.Image], size: int,
         plt.tight_layout()
         plt.imshow(img)
     # plt.show()
-    plt.savefig(f"./{id}.jpg")
+    plt.savefig(f"./{cluster_id}.jpg")
 
 
 # Get the API_KEY from Data Explorer → Utilities → Get CLI/SDK config:
