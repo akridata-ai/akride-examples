@@ -1,5 +1,5 @@
 """
-Get a few samples from each cluster and display.
+After creating a visualization of a dataset, get a few samples from each cluster and display them.
 
 Focus on:
 client.get_job_samples()

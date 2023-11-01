@@ -1,5 +1,6 @@
 """
 Exploring the data in a given dataset.
+This step clusters the data and allows you to visualize the dataset on a 2D plane.
 
 Focus on:
 client.create_job()

@@ -1,5 +1,6 @@
 """
-Ingest images from a new dataset.
+Ingest images from a new dataset to create a representation of each image.
+After this step, we can visualize, explore, sample the data and much more.
 
 Focus on:
 client.ingest_dataset()

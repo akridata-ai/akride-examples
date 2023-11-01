@@ -1,5 +1,5 @@
 """
-Sample a set of images using Coreset
+Sample a set of images using Coreset - preserving small clusters.
 
 Focus on:
 JobContext.CORESET_SAMPLING
