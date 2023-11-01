@@ -1,20 +1,29 @@
+"""
+Get a few samples from each cluster and display.
+
+Focus on:
+client.get_job_samples()
+client.get_thumbnail_images()
+
+"""
 import matplotlib.pyplot as plt
 
 from akride import AkriDEClient, JobContext
 
 
-def display_grid(n_rows: int, n_cols: int, images: list, size: int, cluster_id: int):
+def display_cluster_images(images: list, cluster_id: int,
+                           n_rows: int = 2, n_cols: int = 3, figure_size: int = 5):
     """Display a grid of n_rows x n_cols of images"""
     assert len(images) <= n_rows * n_cols
-    fig = plt.figure(figsize=(size, size))
+    fig = plt.figure(figsize=(figure_size, figure_size))
     for i, img in enumerate(images):
         fig.add_subplot(n_rows, n_cols, i + 1)
         plt.axis('off')
         plt.tight_layout()
         plt.imshow(img)
     print(f"Examples are ready for cluster: {cluster_id}")
-    plt.show()
-    # plt.savefig(f"./{cluster_id}.jpg")  # Uncomment to save the image locally
+    # plt.show()
+    plt.savefig(f"./{cluster_id}.jpg")  # Uncomment to save the image locally
 
 
 # Get the API_KEY from Data Explorer → Utilities → Get CLI/SDK config:
@@ -34,10 +43,8 @@ print(f"Got job - {job.get_name()}")
 num_clusters = job.info.to_dict()["tunables_default"]["max_clusters"]
 print(f"Data has {num_clusters} clusters")
 
-# Get a few examples from each cluster and display in a grid:
-grid_n_rows: int = 2
-grid_n_cols: int = 3
-max_count = grid_n_rows * grid_n_cols  # number of examples to get from a cluster
+# Number of samples to get from each cluster:
+max_count = 5
 
 for cluster_id in range(1, num_clusters + 1):
     # Set the cluster ID:
@@ -46,6 +53,6 @@ for cluster_id in range(1, num_clusters + 1):
     samples = client.get_job_samples(job, JobContext.CLUSTER_RETRIEVAL, spec)  # type: ignore
     cluster_images = client.get_thumbnail_images(samples)
     # display grid:
-    display_grid(grid_n_rows, grid_n_cols, cluster_images, 5, cluster_id)
+    display_cluster_images(cluster_images, cluster_id)
 
 print("Provided examples for each cluster")
