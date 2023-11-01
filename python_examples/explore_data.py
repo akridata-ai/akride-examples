@@ -27,13 +27,12 @@ job = client.create_job(spec=job_spec)
 while True:
     job = client.get_job_by_name(job_name.upper())
     if job.info.status in ["READY", "FAILED"]:  # type: ignore
-        if job.info.status == "READY":  # type: ignore
-            print(f"{job.get_name()} is ready for visualization with "
-                  f"{job.info.to_dict()['tunables_default']['max_clusters']} clusters")
-        else:
-            print(f"{job.get_name()} is in failed state")
-            break
+        if job.info.status == "FAILED":  # type: ignore
+            print(f"{job.get_name()} is in failed state. See logs for more info.")
+
+        break
     else:
         print("Waiting for job completion")
         time.sleep(5)
-print(f"Ready to explore {job_name}")
+
+print(f"Ready to explore - {job.get_name()} with {job.info.to_dict()['tunables_default']['max_clusters']} clusters")
