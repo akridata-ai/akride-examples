@@ -23,7 +23,7 @@ client = AkriDEClient(sdk_config_dict=sdk_config_dict)
 job = client.get_job_by_name("data-explore".upper())
 print(f"Got job - {job.get_name()}")
 
-# Retrieve 15% of core-set data
+# Apply coreset sampling to get 15% of the images:
 spec = {"percent": 15}
 samples = client.get_job_samples(job, JobContext.CORESET_SAMPLING, spec)
 print(f"Retrieved {len(samples)} samples")
