@@ -119,7 +119,7 @@ while True:
         else:
             print(f"{job.get_name()} is in failed state")
             # exit(1)
-            break
+        break
     else:
         print("Waiting for job completion")
         time.sleep(5)
