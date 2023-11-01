@@ -4,8 +4,8 @@ Get a few samples from each cluster and display.
 Focus on:
 client.get_job_samples()
 client.get_thumbnail_images()
-
 """
+
 import matplotlib.pyplot as plt
 
 from akride import AkriDEClient, JobContext

@@ -1,5 +1,9 @@
 """
-Exploring the data in a given dataset
+Exploring the data in a given dataset.
+
+Focus on:
+client.create_job()
+client.get_job_by_name()
 """
 
 import time

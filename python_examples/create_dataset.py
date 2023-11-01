@@ -1,5 +1,8 @@
 """
-Create a dataset in Data Explorer, but without adding or ingesting any data
+Create a dataset in Data Explorer, but without adding or ingesting any data.
+
+Focus on:
+client.create_dataset()
 """
 
 from akride import AkriDEClient

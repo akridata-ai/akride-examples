@@ -1,5 +1,8 @@
 """
-Ingest images from a new dataset
+Ingest images from a new dataset.
+
+Focus on:
+client.ingest_dataset()
 """
 
 import time
