@@ -1,11 +1,9 @@
 import matplotlib.pyplot as plt
 
-from PIL import Image
-
 from akride import AkriDEClient, JobContext
 
 
-def display_grid(n_rows: int, n_cols: int, images: list[Image], size: int, cluster_id: int):
+def display_grid(n_rows: int, n_cols: int, images: list, size: int, cluster_id: int):
     """Display a grid of n_rows x n_cols of images"""
     assert len(images) <= n_rows * n_cols
     fig = plt.figure(figsize=(size, size))
