@@ -34,7 +34,7 @@ pos_images = ["../dataset/cat-dog-bird/dog/109.jpg", "../dataset/cat-dog-bird/do
 # Negative Image Samples for similarity search - you don't want results similar to them:
 neg_images = ["../dataset/cat-dog-bird/cat/1076.jpg", "../dataset/cat-dog-bird/bird/1080.jpg"]
 
-# Ensure that the image paths used here match the image paths used for ingest
+# Ensure that the image paths used here match the image paths used for ingest:
 positive_samples = [os.path.abspath(os.path.join(os.getcwd(), sample)) for sample in pos_images]
 negative_samples = [os.path.abspath(os.path.join(os.getcwd(), sample)) for sample in neg_images]
 print("Pos and Neg examples:")
@@ -48,4 +48,5 @@ thumbnails = client.get_thumbnail_images(samples=samples)
 print(f"Retrieved {len(thumbnails)} images")
 
 print("Displaying the results:")
+# display_images(thumbnails, n_rows=4, n_cols=4, figure_w=5, figure_h=5, save_file=None)
 display_images(thumbnails, n_rows=4, n_cols=4, figure_w=5, figure_h=5, save_file="search.jpg")
