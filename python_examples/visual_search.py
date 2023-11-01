@@ -13,8 +13,7 @@ client.get_job_samples()
 
 import os
 
-import akride
-from akride import AkriDEClient
+from akride import AkriDEClient, JobContext
 
 from display_images import display_images
 
@@ -43,7 +42,7 @@ print(positive_samples)
 print(negative_samples)
 
 spec = {'positive_samples': positive_samples, 'negative_samples': negative_samples}
-samples = client.get_job_samples(job, akride.JobContext.SIMILARITY_SEARCH, spec)
+samples = client.get_job_samples(job, JobContext.SIMILARITY_SEARCH, spec)
 
 thumbnails = client.get_thumbnail_images(samples=samples)
 print(f"Retrieved {len(thumbnails)} images")
