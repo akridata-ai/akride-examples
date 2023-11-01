@@ -25,7 +25,7 @@ client = AkriDEClient(sdk_config_dict=sdk_config_dict)
 dataset = client.get_dataset_by_name(name="Dataset-of-images")
 print(f"Connected to {dataset.get_name()}, ID: {dataset.get_id()}")
 
-# Create a job and wait for completion. Name must be at 3 characters long or more:
+# Create a job and wait for completion. Job name must be at least 3 characters long:
 job_name = "data-explore"
 job_spec = client.create_job_spec(dataset=dataset, job_name=job_name)
 job = client.create_job(spec=job_spec)
