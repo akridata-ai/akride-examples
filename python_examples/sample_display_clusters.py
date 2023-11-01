@@ -12,8 +12,9 @@ def display_grid(n_rows: int, n_cols: int, images: list, size: int, cluster_id: 
         plt.axis('off')
         plt.tight_layout()
         plt.imshow(img)
-    # plt.show()
-    plt.savefig(f"./{cluster_id}.jpg")
+    print(f"Examples are read for cluster: {cluster_id}")
+    plt.show()
+    # plt.savefig(f"./{cluster_id}.jpg")  # Uncomment to save the image locally
 
 
 # Get the API_KEY from Data Explorer → Utilities → Get CLI/SDK config:
@@ -27,9 +28,11 @@ client = AkriDEClient(sdk_config_dict=sdk_config_dict)
 
 # Retrieve the job by name:
 job = client.get_job_by_name("data-explore".upper())
+print(f"Got job - {job.get_name()}")
 
 # Get number of clusters to sample from:
 num_clusters = job.info.to_dict()["tunables_default"]["max_clusters"]
+print(f"Data has {num_clusters} clusters")
 
 # Get a few examples from each cluster and display in a grid:
 grid_n_rows: int = 2
@@ -44,3 +47,5 @@ for cluster_id in range(1, num_clusters + 1):
     cluster_images = client.get_thumbnail_images(samples)
     # display grid:
     display_grid(grid_n_rows, grid_n_cols, cluster_images, 5, cluster_id)
+
+print("Provided examples for each cluster")
