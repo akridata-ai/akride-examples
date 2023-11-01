@@ -22,8 +22,8 @@ def display_cluster_images(images: list, cluster_id: int,
         plt.tight_layout()
         plt.imshow(img)
     print(f"Examples are ready for cluster: {cluster_id}")
-    # plt.show()
-    plt.savefig(f"./{cluster_id}.jpg")  # Uncomment to save the image locally
+    plt.show()
+    # plt.savefig(f"./{cluster_id}.jpg")  # Uncomment to save the image locally
 
 
 # Get the API_KEY from Data Explorer → Utilities → Get CLI/SDK config:
