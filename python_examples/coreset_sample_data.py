@@ -11,10 +11,10 @@ import matplotlib.pyplot as plt
 from akride import AkriDEClient, JobContext
 
 
-def display_cluster_images(images: list, n_rows: int = 1, n_cols: int = 6, figure_size: int = 10):
+def display_cluster_images(images: list, n_rows: int = 1, n_cols: int = 6, figure_w: int = 10, figure_h: int = 3):
     """Display a grid of n_rows x n_cols of images"""
     assert len(images) <= n_rows * n_cols
-    fig = plt.figure(figsize=(figure_size, figure_size))
+    fig = plt.figure(figsize=(figure_w, figure_h))
     for i, img in enumerate(images):
         fig.add_subplot(n_rows, n_cols, i + 1)
         plt.axis('off')
