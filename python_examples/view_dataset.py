@@ -24,3 +24,7 @@ print(f"Got job - {job.get_name()}")
 # Get the URL for the job in Data Explorer:
 url = client.get_job_display_panel(job)
 print(url)
+
+# NOTE:
+# 1. Login into your Data Explorer account
+# 2. The URL is your dataset visualization page
