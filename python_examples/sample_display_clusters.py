@@ -12,7 +12,7 @@ def display_grid(n_rows: int, n_cols: int, images: list, size: int, cluster_id: 
         plt.axis('off')
         plt.tight_layout()
         plt.imshow(img)
-    print(f"Examples are read for cluster: {cluster_id}")
+    print(f"Examples are ready for cluster: {cluster_id}")
     plt.show()
     # plt.savefig(f"./{cluster_id}.jpg")  # Uncomment to save the image locally
 
