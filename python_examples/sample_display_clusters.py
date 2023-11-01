@@ -38,7 +38,7 @@ for cluster_id in range(1, num_clusters + 1):
     thumbnails = client.get_thumbnail_images(samples)
     # display grid:
     print(f"Examples for cluster {cluster_id}")
-    # display_images(cluster_images, n_rows=2, n_cols=3, figure_w=5, figure_h=5, save_file=None)
-    display_images(thumbnails, n_rows=2, n_cols=3, figure_w=5, figure_h=5, save_file="./" + str(cluster_id) + ".jpg")
+    display_images(thumbnails, n_rows=2, n_cols=3, figure_w=5, figure_h=5, save_file=None)
+    # display_images(thumbnails, n_rows=2, n_cols=3, figure_w=5, figure_h=5, save_file="./" + str(cluster_id) + ".jpg")
 
 print("Provided examples for each cluster")
