@@ -21,8 +21,8 @@ def display_cluster_images(images: list, n_rows: int = 1, n_cols: int = 6, figur
         plt.tight_layout()
         plt.imshow(img)
     print("Examples sampled after Coreset")
-    # plt.show()
-    plt.savefig(f"./example_core_set.jpg")  # Uncomment to save the image locally
+    plt.show()
+    # plt.savefig(f"./example_core_set.jpg")  # Uncomment to save the image locally
 
 
 # Get the API_KEY from Data Explorer → Utilities → Get CLI/SDK config:
