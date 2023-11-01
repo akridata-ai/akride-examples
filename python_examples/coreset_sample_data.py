@@ -31,4 +31,5 @@ print(f"Retrieved {len(samples)} samples")
 # Display the first 6 thumbnails:
 thumbnails = client.get_thumbnail_images(samples=samples[:6])
 print("Examples after Core-set:")
-display_images(thumbnails, n_rows=1, n_cols=6, figure_w=10, figure_h=3, output_file_name=None)
+# display_images(thumbnails, n_rows=1, n_cols=6, figure_w=10, figure_h=3, save_file=None)
+display_images(thumbnails, n_rows=1, n_cols=6, figure_w=10, figure_h=3, save_file="./coreset.jpg")
