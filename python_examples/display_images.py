@@ -8,6 +8,8 @@ def display_images(images: list,
                    figure_h: int,
                    save_file: str = None):
     """Display a grid of n_rows x n_cols of images. Show the images or save if path provided"""
+    print(len(images))
+    print(n_rows * n_cols)
     assert len(images) <= n_rows * n_cols
     fig = plt.figure(figsize=(figure_w, figure_h))
     for i, img in enumerate(images):
