@@ -131,7 +131,7 @@ thumbnails = client.get_thumbnail_images(samples=samples)
 print(f"Retrieved {len(thumbnails)} images")
 
 print("Displaying the results:")  # set save_file=None to view the image without saving:
-display_images(thumbnails, n_rows=4, n_cols=4, figure_w=5, figure_h=5, save_file="search.jpg")
+display_images(thumbnails, n_rows=4, n_cols=4, figure_w=5, figure_h=5, save_file="./search.jpg")
 
 #######################################################################################################################
 # Save the curated data into a result-set for further processing:
