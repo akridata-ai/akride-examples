@@ -9,8 +9,7 @@ def display_images(images: list,
                    save_file: str = None):
     """Display a grid of n_rows x n_cols of images. Show the images or save if path provided"""
     if len(images) > (n_rows * n_cols):
-        print(f"Provided {len(images)} images. Too much fig with {n_rows * n_cols} subplots")
-        assert len(images) > (n_rows * n_cols)
+        raise Exception(f"Provided {len(images)} images. Too much for a fig with {n_rows * n_cols} subplots")
     fig = plt.figure(figsize=(figure_w, figure_h))
     for i, img in enumerate(images):
         fig.add_subplot(n_rows, n_cols, i + 1)
