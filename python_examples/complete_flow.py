@@ -147,4 +147,4 @@ thumbnails = client.get_thumbnail_images(result_set_samples)
 print(f"Retrieved {len(thumbnails)} images from result-set")
 
 print("Display the result-set images:")  # set save_file=None to view the image without saving:
-display_images(thumbnails, n_rows=3, n_cols=3, figure_w=5, figure_h=5, save_file="./result_set.jpg")
+display_images(thumbnails, n_rows=4, n_cols=4, figure_w=5, figure_h=5, save_file="./result_set.jpg")
