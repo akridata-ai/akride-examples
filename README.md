@@ -17,7 +17,7 @@ and much more!
 
 ![Local Image](gallery/data_visualization.jpg)
 
-### Prerequisites
+## Prerequisites
 
 Python version supported:
 
@@ -29,7 +29,10 @@ OS supported:
 [![Platform](https://img.shields.io/badge/Ubuntu-E95420?style=for-the-badge&logo=ubuntu&logoColor=white)](https://your-project-url)
 [![Platform](https://img.shields.io/badge/macOS-black?style=for-the-badge&logo=apple&logoColor=white)](https://your-project-url)
 
-Install from [Pypi](https://pypi.org/project/akride/):
+
+## Installation:
+
+Install from [Pypi](https://pypi.org/project/akride/) via:
 ```commandline
 pip install akride
 ```
