@@ -63,25 +63,44 @@ And own your data!
 
 ## Examples
 
-A few examples are provided below in a form of a Notebook and Python code:
+To get started with the SDK, a few examples are provided below in a form of a Notebook and Python code:
 
 1. **Dataset Creation** - [Notebook](notebooks/create_dataset.ipynb), [Python](python_examples/create_dataset.py)
    
-   Register a dataset on Data Explorer. Once completed, you can see this on the web interface:
+   First mandatory step is to register a dataset via the SDK. This is done via two lines of code:
+   ```
+   dataset_spec = {"dataset_name": "Dataset-of-images", "data_type": DataType.IMAGE}  # Use DataType.VIDEO for videos
+   dataset = client.create_dataset(spec=dataset_spec)
+   ```
+   
+   Once completed, you can see this on the web interface:
 
    ![Local Image](gallery/create_dataset.png)
 
 2. **Data Ingestion** - [View Notebook](notebooks/ingest_data.ipynb), [Python](python_examples/ingest_data.py)
 
-   After the dataset was registered and ingested, basic catalog information is available though the web interface too:
+   After registering the dataset, allow the client to process it:
+   ```
+   task = client.ingest_dataset(dataset=dataset, data_directory=path_to_images)
+   ```
+   Basic catalog information is available though the web interface after completion:
 
    ![Local Image](gallery/data_ingestion.png)
 
+   Any additional information can be added to the catalog, such as: data source, time stamps, annotation information etc. 
+
+   _Note:_ This step could take some time, based on dataset size and resources available.
+
 3. **Dataset Visualization** - [View Notebook](notebooks/explore_data.ipynb), [Python](python_examples/explore_data.py)
 
-   Displaying the dataset allows you to visualize its structure, explore it and focus where most relevant for your task.
+   After data ingestion, explore it by creating an Explore-Job. This will allow you to visualize its structure, 
+   explore it and focus on the most relevant parts for your task:
+   ```
+   job_spec = client.create_job_spec(dataset=dataset, job_name="data-explore")
+   job = client.create_job(spec=job_spec)
+   ```
    
-   This example creates an Exploration-job on the Data Explorer UI:
+   The created Explore-job is visible on the Data Explorer UI:
    
    ![Local Image](gallery/explore_job_created.png)
 
@@ -89,8 +108,35 @@ A few examples are provided below in a form of a Notebook and Python code:
 
    ![Local Image](gallery/job_visualization.png)
 
+   _Note:_
+   
+   Get the URL for the above job from the SDK by running:
+   ```
+   url = client.get_job_display_panel(job)
+   ```
+   
+   As demonstrated in: [View Notebook](notebooks/view_dataset.ipynb), [Python](python_examples/view_dataset.py)
 
-4. **Data Ingestion and Exploration** - [View Notebook](notebooks/akride_explore_dataset.ipynb)
+4. **Cluster Examples** - [View Notebook](notebooks/sample_display_clusters.ipynb), [Python](python_examples/sample_display_clusters.py)
+   
+   Visualizing the dataset can be done locally, without using Data Explorer's UI. 
+   First, retrieve the number of clusters using:
+   ```
+   num_clusters = job.info.to_dict()["tunables_default"]["max_clusters"]
+   ```
+   
+   Second, get a few examples from each cluster to be displayed in the notebook or saved to disk, based on the below code:
+   ```
+   spec = {"cluster_id": cluster_id, "max_count": number_of_example}
+   samples = client.get_job_samples(job, JobContext.CLUSTER_RETRIEVAL, spec)
+   thumbnails = client.get_thumbnail_images(samples)
+   ```
+
+5. **Coreset Dataset Sampling** - [View Notebook](notebooks/coreset_sample_data.ipynb), [Python](python_examples/coreset_sample_data.py)
+
+   Visualizing the dataset can be done locally, without using Data Explorer's UI.
+
+6. **Data Ingestion and Exploration** - [View Notebook](notebooks/akride_explore_dataset.ipynb)
 
    This notebook provides an example of how to ingest data into the Akridata Data Explorer application using the Python client. It shows how the client can be used to explore image data, run similarity searches, and create result sets within the Akridata platform.
 
@@ -98,7 +144,11 @@ A few examples are provided below in a form of a Notebook and Python code:
 
 ## Documentation
 
-For detailed documentation on how to use the akride client and its capabilities, please refer to the [official Akridata documentation](https://akridata-akride.readthedocs-hosted.com/en/latest/). For more information about Akridata's Data Explorer and other Akridata products, please refer to the [official product documentation](https://docs.akridata.ai/docs).
+For detailed documentation on how to use the akride client and its capabilities, 
+please refer to the [official Akridata documentation](https://akridata-akride.readthedocs-hosted.com/en/latest/). 
+
+For more information about Akridata's Data Explorer and other Akridata products, 
+please refer to the [official product documentation](https://docs.akridata.ai/docs).
 
 ## Contributing
 
