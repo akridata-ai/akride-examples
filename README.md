@@ -92,9 +92,12 @@ To get started with the SDK, a few examples are provided below in a form of a No
    _Note:_ This step could take some time, based on dataset size and resources available.
 
 3. **Dataset Visualization** - [View Notebook](notebooks/explore_data.ipynb), [Python](python_examples/explore_data.py)
-
-   After data ingestion, explore it by creating an Explore-Job. This will allow you to visualize its structure, 
-   explore it and focus on the most relevant parts for your task:
+ 
+   Visualizing your dataset allows you to Identify and remove *Outliers* from specific clusters or whole clusters altogether. 
+   
+   It is also the basis for *Balancing* your dataset. 
+   
+   To get started, create an Explore-Job:
    ```
    job_spec = client.create_job_spec(dataset=dataset, job_name="data-explore")
    job = client.create_job(spec=job_spec)
@@ -134,7 +137,13 @@ To get started with the SDK, a few examples are provided below in a form of a No
 
 5. **Coreset Dataset Sampling** - [View Notebook](notebooks/coreset_sample_data.ipynb), [Python](python_examples/coreset_sample_data.py)
 
-   Visualizing the dataset can be done locally, without using Data Explorer's UI.
+   Why annotate or train on the whole dataset? Apply **smart** sampling to preserve small clusters but train on only a portion of the data.
+   
+   The SDK supports Coreset sampling, where you can specify the percentage of the data to extract. 
+   In the example below 30% of the data will be sampled:
+   ```
+   samples = client.get_job_samples(job, JobContext.CORESET_SAMPLING, {"percent": 30})
+   ```
 
 6. **Data Ingestion and Exploration** - [View Notebook](notebooks/akride_explore_dataset.ipynb)
 
