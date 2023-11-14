@@ -63,11 +63,11 @@ And own your data!
 
 ## Examples
 
-We provide a few examples below in a form of a notebook and Python code:
+A few examples are provided below in a form of a Notebook and Python code:
 
 1. **Dataset Creation** - [Notebook](notebooks/create_dataset.ipynb), [Python](python_examples/create_dataset.py)
    
-   This notebook contains basic code to register a dataset on Data Explorer. Once completed, you'll see this on the web interface:
+   Register a dataset on Data Explorer. Once completed, you can see this on the web interface:
 
    ![Local Image](gallery/create_dataset.png)
 
@@ -77,8 +77,20 @@ We provide a few examples below in a form of a notebook and Python code:
 
    ![Local Image](gallery/data_ingestion.png)
 
+3. **Dataset Visualization** - [View Notebook](notebooks/explore_data.ipynb), [Python](python_examples/explore_data.py)
 
-3. **Data Ingestion and Exploration** - [View Notebook](notebooks/akride_explore_dataset.ipynb)
+   Displaying the dataset allows you to visualize its structure, explore it and focus where most relevant for your task.
+   
+   This example creates an Exploration-job on the Data Explorer UI:
+   
+   ![Local Image](gallery/explore_job_created.png)
+
+   Where the toy dataset is visible:
+
+   ![Local Image](gallery/job_visualization.png)
+
+
+4. **Data Ingestion and Exploration** - [View Notebook](notebooks/akride_explore_dataset.ipynb)
 
    This notebook provides an example of how to ingest data into the Akridata Data Explorer application using the Python client. It shows how the client can be used to explore image data, run similarity searches, and create result sets within the Akridata platform.
 
