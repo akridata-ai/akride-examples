@@ -19,11 +19,19 @@ and much more!
 
 ### Prerequisites
 
+Python version supported:
+
+
 ![PyPi](https://img.shields.io/badge/Python-3.8%20%7C%203.9%20%7C%203.10-blue?style=for-the-badge)
 
-Installation from:
-
+Install from: 
 (https://pypi.org/project/akride/)
+
+OS supported:
+
+[![Platform](https://img.shields.io/badge/Windows-blue?style=for-the-badge&logo=windows&logoColor=white)](https://your-project-url)
+[![Platform](https://img.shields.io/badge/Ubuntu-E95420?style=for-the-badge&logo=ubuntu&logoColor=white)](https://your-project-url)
+[![Platform](https://img.shields.io/badge/macOS-black?style=for-the-badge&logo=apple&logoColor=white)](https://your-project-url)
 
 
 - Python version 3.8 or higher is required to run the examples in this repository.
@@ -145,7 +153,11 @@ To get started with the SDK, a few examples are provided below in a form of a No
    samples = client.get_job_samples(job, JobContext.CORESET_SAMPLING, {"percent": 30})
    ```
 
-6. **Data Ingestion and Exploration** - [View Notebook](notebooks/akride_explore_dataset.ipynb)
+6. **Visual Search** - [View Notebook](notebooks/visual_search.ipynb), [Python](python_examples/visual_search.py)
+
+   
+
+7. **Data Ingestion and Exploration** - [View Notebook](notebooks/akride_explore_dataset.ipynb)
 
    This notebook provides an example of how to ingest data into the Akridata Data Explorer application using the Python client. It shows how the client can be used to explore image data, run similarity searches, and create result sets within the Akridata platform.
 
