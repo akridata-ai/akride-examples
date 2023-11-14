@@ -21,11 +21,7 @@ and much more!
 
 Python version supported:
 
-
 ![PyPi](https://img.shields.io/badge/Python-3.8%20%7C%203.9%20%7C%203.10-blue?style=for-the-badge)
-
-Install from: 
-(https://pypi.org/project/akride/)
 
 OS supported:
 
@@ -33,6 +29,10 @@ OS supported:
 [![Platform](https://img.shields.io/badge/Ubuntu-E95420?style=for-the-badge&logo=ubuntu&logoColor=white)](https://your-project-url)
 [![Platform](https://img.shields.io/badge/macOS-black?style=for-the-badge&logo=apple&logoColor=white)](https://your-project-url)
 
+Install from [Pypi](https://pypi.org/project/akride/):
+```commandline
+pip install akride
+```
 
 - Python version 3.8 or higher is required to run the examples in this repository.
 - We recommend using a virtual environment to manage your Python dependencies.
