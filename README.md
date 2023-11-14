@@ -15,6 +15,20 @@ Akridata's Data Explorer allows you to save time building the best training and 
 
 and much more!
 
+![Local Image](gallery/data_visualization.jpg)
+
+### Prerequisites
+
+![PyPi](https://img.shields.io/badge/Python-3.8%20%7C%203.9%20%7C%203.10-blue?style=for-the-badge)
+
+Installation from:
+
+(https://pypi.org/project/akride/)
+
+
+- Python version 3.8 or higher is required to run the examples in this repository.
+- We recommend using a virtual environment to manage your Python dependencies.
+
 ## Getting Started
 
 To get started with the Python client, follow these steps:
@@ -37,18 +51,34 @@ To get started with the Python client, follow these steps:
 
 4. You can copy the SDK configuration that is needed to interact with Akridata's services. Make sure to keep this configuration secure.
 
-### Step 3: Set up your environment
+### Step 3: Define the client
 
-#### Prerequisites
+Define Akride client with just one line of code:
 
-- Python version 3.8 or higher is required to run the examples in this repository.
-- We recommend using a virtual environment to manage your Python dependencies.
+```
+client = AkriDEClient(sdk_config_dict=sdk_config_dict)
+```
 
-Once you have followed the steps in the previous section, clone this repository. Once you have the SDK configuration, you can start using the client to interact with Akridata's Data Explorer platform.
+And own your data!
 
-## Notebooks
+## Examples
 
-1. **Data Ingestion and Exploration** - [View Notebook](notebooks/akride_explore_dataset.ipynb)
+We provide a few examples below in a form of a notebook and Python code:
+
+1. **Dataset Creation** - [Notebook](notebooks/create_dataset.ipynb), [Python](python_examples/create_dataset.py)
+   
+   This notebook contains basic code to register a dataset on Data Explorer. Once completed, you'll see this on the web interface:
+
+   ![Local Image](gallery/create_dataset.png)
+
+2. **Data Ingestion** - [View Notebook](notebooks/ingest_data.ipynb), [Python](python_examples/ingest_data.py)
+
+   After the dataset was registered and ingested, basic catalog information is available though the web interface too:
+
+   ![Local Image](gallery/data_ingestion.png)
+
+
+3. **Data Ingestion and Exploration** - [View Notebook](notebooks/akride_explore_dataset.ipynb)
 
    This notebook provides an example of how to ingest data into the Akridata Data Explorer application using the Python client. It shows how the client can be used to explore image data, run similarity searches, and create result sets within the Akridata platform.
 
