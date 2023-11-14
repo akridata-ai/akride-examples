@@ -155,7 +155,20 @@ To get started with the SDK, a few examples are provided below in a form of a No
 
 6. **Visual Search** - [View Notebook](notebooks/visual_search.ipynb), [Python](python_examples/visual_search.py)
 
+   Searching for specific examples for training or testing from within the dataset could take hours.
    
+   **Save your time**
+   
+   The SDK allows you to specify one (or more) image and search for similar images throughout the whole dataset!
+   
+   Found images you didn't like? Mark them as accordingly and avoid similar images in the results.
+   
+   The code below illustrates the process, where "positive_samples" and "negative_samples" are lists of paths to the 
+   relevant examples from your dataset:
+   ```
+   spec = {'positive_samples': positive_samples, 'negative_samples': negative_samples}
+   samples = client.get_job_samples(job, JobContext.SIMILARITY_SEARCH, spec)
+   ```
 
 7. **Data Ingestion and Exploration** - [View Notebook](notebooks/akride_explore_dataset.ipynb)
 
