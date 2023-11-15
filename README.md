@@ -15,7 +15,7 @@ Akridata's Data Explorer allows you to save time building the best training and 
 
 and much more!
 
-![Local Image](gallery/data_visualization.jpg)
+![Local Image](gallery/data_visualization.png)
 
 ## Prerequisites
 
