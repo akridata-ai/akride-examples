@@ -173,11 +173,20 @@ To get started with the SDK, a few examples are provided below in a form of a No
    samples = client.get_job_samples(job, JobContext.SIMILARITY_SEARCH, spec)
    ```
 
-7. **Data Ingestion and Exploration** - [View Notebook](notebooks/akride_explore_dataset.ipynb)
+7. **Saving results** - [View Notebook](notebooks/resultset.ipynb), [Python](python_examples/resultset.py)
+   
+   After Sampling, Searching or otherwise processing the dataset, results can be saved into a Resultset, as shown below:
+   ```
+   result_set_spec = {"job": job, "name": "result-dog-search", "samples": samples}
+   resultset = client.create_resultset(result_set_spec)
+   ```
+   This allows later retrieval of the data for training, testing and further analysis. 
+   
+8. **Putting it all together** - [View Notebook](notebooks/akride_explore_dataset.ipynb), [Python](python_examples/complete_flow.py)
 
-   This notebook provides an example of how to ingest data into the Akridata Data Explorer application using the Python client. It shows how the client can be used to explore image data, run similarity searches, and create result sets within the Akridata platform.
+   This example combines all the steps above to get the best of **akride** SDK
 
-   _Note: Make sure to follow the "Getting Started" steps to set up your environment and obtain the necessary SDK configuration before running this notebook._
+   _Note: Make sure to follow the "Getting Started" steps to set up your environment first._
 
 ## Documentation
 
