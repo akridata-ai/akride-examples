@@ -39,6 +39,10 @@ Once you have followed the steps in the previous section, clone this repository.
 
    This notebook provides an example of how to ingest data into the AkriData Data Explorer application using the Python client. It shows how the client can be used to explore image data, run similarity searches, and create result sets within the AkriData platform.
 
+2. **Analysis of an Object Classification Model** - [View Notebook](notebooks/akride_analyze_dataset.ipynb)
+
+   This notebook shows how to ingest image data along with ground truth and prediction information of a ML model into DataExplorer, which can then be used to analyze the model accuracy in addition to data exploration.
+
    _Note: Make sure to follow the "Getting Started" steps to set up your environment and obtain the necessary SDK configuration before running this notebook._
 
 ## Documentation
