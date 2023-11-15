@@ -145,6 +145,9 @@ To get started with the SDK, a few examples are provided below in a form of a No
    samples = client.get_job_samples(job, JobContext.CLUSTER_RETRIEVAL, spec)
    thumbnails = client.get_thumbnail_images(samples)
    ```
+   
+   Basic results are visible below:
+   ![Local Image](gallery/samples_black.png)
 
 5. **Coreset Dataset Sampling** - [View Notebook](notebooks/coreset_sample_data.ipynb), [Python](python_examples/coreset_sample_data.py)
 
@@ -155,6 +158,9 @@ To get started with the SDK, a few examples are provided below in a form of a No
    ```
    samples = client.get_job_samples(job, JobContext.CORESET_SAMPLING, {"percent": 30})
    ```
+   
+   Basic results of sampling a dataset are visible here:
+   ![Local Image](gallery/coreset_black.png)
 
 6. **Visual Search** - [View Notebook](notebooks/visual_search.ipynb), [Python](python_examples/visual_search.py)
 
@@ -172,6 +178,9 @@ To get started with the SDK, a few examples are provided below in a form of a No
    spec = {'positive_samples': positive_samples, 'negative_samples': negative_samples}
    samples = client.get_job_samples(job, JobContext.SIMILARITY_SEARCH, spec)
    ```
+   
+   Basic results of searching fo Dog images are visible here:
+   ![Local Image](gallery/search_black.png)
 
 7. **Saving results** - [View Notebook](notebooks/resultset.ipynb), [Python](python_examples/resultset.py)
    
