@@ -32,7 +32,7 @@ OS supported:
 
 ## Installation:
 
-Install from [Pypi](https://pypi.org/project/akride/) via:
+**akride** installation is available on [Pypi](https://pypi.org/project/akride/) via:
 ```commandline
 pip install akride
 ```
