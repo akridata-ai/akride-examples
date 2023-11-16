@@ -41,7 +41,7 @@ Once you have followed the steps in the previous section, clone this repository.
 
 2. **Analysis of an Object Classification Model** - [View Notebook](notebooks/akride_analyze_dataset.ipynb)
 
-   This notebook shows how to ingest image data along with ground truth and prediction information of a ML model into DataExplorer, which can then be used to analyze the model accuracy in addition to data exploration.
+   This notebook shows how to ingest image data along with ground truth and prediction information of a ML model into Data Explorer, which can then be used to analyze the model accuracy in addition to data exploration.
 
    _Note: Make sure to follow the "Getting Started" steps to set up your environment and obtain the necessary SDK configuration before running this notebook._
 
