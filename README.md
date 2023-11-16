@@ -118,7 +118,7 @@ To get started with the SDK, a few examples are provided below in a form of a No
    
    ![Local Image](gallery/explore_job_created.png)
 
-   Where the toy dataset is visible:
+   Where the dataset from this example is visible:
 
    ![Local Image](gallery/job_visualization.png)
 
