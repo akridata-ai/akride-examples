@@ -147,7 +147,7 @@ To get started with the SDK, a few examples are provided below in a form of a No
    ```
    
    Basic results are visible below:
-   ![Local Image](gallery/samples_black.png)
+   ![Local Image](gallery/samples.png)
 
 5. **Coreset Dataset Sampling** - [View Notebook](notebooks/coreset_sample_data.ipynb), [Python](python_examples/coreset_sample_data.py)
 
@@ -160,7 +160,7 @@ To get started with the SDK, a few examples are provided below in a form of a No
    ```
    
    Basic results of sampling a dataset are visible here:
-   ![Local Image](gallery/coreset_black.png)
+   ![Local Image](gallery/coreset.png)
 
 6. **Visual Search** - [View Notebook](notebooks/visual_search.ipynb), [Python](python_examples/visual_search.py)
 
@@ -180,7 +180,7 @@ To get started with the SDK, a few examples are provided below in a form of a No
    ```
    
    Basic results of searching fo Dog images are visible here:
-   ![Local Image](gallery/search_black.png)
+   ![Local Image](gallery/search.png)
 
 7. **Saving results** - [View Notebook](notebooks/resultset.ipynb), [Python](python_examples/resultset.py)
    
