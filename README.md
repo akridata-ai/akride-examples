@@ -200,10 +200,10 @@ To get started with the SDK, a few examples are provided below in a form of a No
 ## Documentation
 
 For detailed documentation on how to use the akride client and its capabilities, 
-please refer to the [official Akridata documentation](https://akridata-akride.readthedocs-hosted.com/en/latest/). 
+please refer to the [official SDK documentation](https://akridata-akride.readthedocs-hosted.com/en/latest/). 
 
 For more information about Akridata's Data Explorer and other Akridata products, 
-please refer to the [official product documentation](https://docs.akridata.ai/docs).
+please refer to the [official Akridata documentation](https://docs.akridata.ai/docs).
 
 ## Contributing
 
