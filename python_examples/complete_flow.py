@@ -24,9 +24,9 @@ from display_images import display_images
 
 # Get the API_KEY from Data Explorer → Utilities → Get CLI/SDK config:
 sdk_config_dict = {
-  "saas_endpoint": "https://app.akridata.ai",
-  "api_key": "akridata-804b6140d095:kGgXfc2qbXrgso0f5cGzuynaCiLxLZ0fc6xvRs6eFBAu0Ykd",
-  "mode": "saas"
+    "saas_endpoint": "https://app.akridata.ai",
+    "api_key": "akridata-apikey",
+    "mode": "saas",
 }
 
 # Define the Data Explorer client side:
@@ -36,7 +36,9 @@ client = AkriDEClient(sdk_config_dict=sdk_config_dict)
 # 1. Register a dataset on Data Explorer. Avoid spaces in the dataset name:
 dataset_spec = {"dataset_name": "cats-dogs-birds", "data_type": DataType.IMAGE}
 dataset = client.create_dataset(spec=dataset_spec)
-print(f"Dataset {dataset.get_name()} created successfully with ID {dataset.get_id()}")
+print(
+    f"Dataset {dataset.get_name()} created successfully with ID {dataset.get_id()}"
+)
 
 # If a dataset already exists, connect to it, for example:
 # dataset = client.get_dataset_by_name(name="cats-dogs-birds")
@@ -59,14 +61,18 @@ while True:
     job = client.get_job_by_name(job_name.upper())
     if job.info.status in ["READY", "FAILED"]:  # type: ignore
         if job.info.status == "FAILED":  # type: ignore
-            print(f"{job.get_name()} is in failed state. See logs for more info.")
+            print(
+                f"{job.get_name()} is in failed state. See logs for more info."
+            )
 
         break
     else:
         print("Waiting for job completion")
         time.sleep(5)
 
-print(f"Ready to explore - {job.get_name()} with {job.info.to_dict()['tunables_default']['max_clusters']} clusters")
+print(
+    f"Ready to explore - {job.get_name()} with {job.info.to_dict()['tunables_default']['max_clusters']} clusters"
+)
 
 # If job exists, you can get it via name:
 # job = client.get_job_by_name("cats-dogs-birds-explore".upper())
@@ -94,8 +100,17 @@ for cluster_id in range(1, num_clusters + 1):
     samples = client.get_job_samples(job, JobContext.CLUSTER_RETRIEVAL, spec)  # type: ignore
     thumbnails = client.get_thumbnail_images(samples)
     # display grid:
-    print(f"Examples for cluster {cluster_id}")  # set save_file=None to view the image without saving:
-    display_images(thumbnails, n_rows=2, n_cols=3, figure_w=5, figure_h=5, save_file="./" + str(cluster_id) + ".jpg")
+    print(
+        f"Examples for cluster {cluster_id}"
+    )  # set save_file=None to view the image without saving:
+    display_images(
+        thumbnails,
+        n_rows=2,
+        n_cols=3,
+        figure_w=5,
+        figure_h=5,
+        save_file="./" + str(cluster_id) + ".jpg",
+    )
 
 print("Provided examples for each cluster")
 
@@ -106,32 +121,63 @@ samples = client.get_job_samples(job, JobContext.CORESET_SAMPLING, spec)
 thumbnails = client.get_thumbnail_images(samples=samples[:6])
 print(f"Retrieved {len(samples)} samples")
 
-print("Showing a subset of data:")  # set save_file=None to view the image without saving:
-display_images(thumbnails, n_rows=1, n_cols=6, figure_w=10, figure_h=3, save_file="./coreset.jpg")
+print(
+    "Showing a subset of data:"
+)  # set save_file=None to view the image without saving:
+display_images(
+    thumbnails,
+    n_rows=1,
+    n_cols=6,
+    figure_w=10,
+    figure_h=3,
+    save_file="./coreset.jpg",
+)
 
 #######################################################################################################################
 # 6. Apply visual search, i.e. based on the below chosen query images:
 
 # Positive Image samples for similarity search - you want results similar to them:
-pos_images = ["../dataset/cat-dog-bird/dog/109.jpg", "../dataset/cat-dog-bird/dog/1073.jpg"]
+pos_images = [
+    "../dataset/cat-dog-bird/dog/109.jpg",
+    "../dataset/cat-dog-bird/dog/1073.jpg",
+]
 # Negative Image Samples for similarity search - you don't want results similar to them:
-neg_images = ["../dataset/cat-dog-bird/cat/1076.jpg", "../dataset/cat-dog-bird/bird/1080.jpg"]
+neg_images = [
+    "../dataset/cat-dog-bird/cat/1076.jpg",
+    "../dataset/cat-dog-bird/bird/1080.jpg",
+]
 
 # Ensure that the image paths used here match the image paths used for ingest:
-positive_samples = [os.path.abspath(os.path.join(os.getcwd(), sample)) for sample in pos_images]
-negative_samples = [os.path.abspath(os.path.join(os.getcwd(), sample)) for sample in neg_images]
+positive_samples = [
+    os.path.abspath(os.path.join(os.getcwd(), sample)) for sample in pos_images
+]
+negative_samples = [
+    os.path.abspath(os.path.join(os.getcwd(), sample)) for sample in neg_images
+]
 print("Pos and Neg examples:")
 print(positive_samples)
 print(negative_samples)
 
-spec = {'positive_samples': positive_samples, 'negative_samples': negative_samples}
+spec = {
+    "positive_samples": positive_samples,
+    "negative_samples": negative_samples,
+}
 samples = client.get_job_samples(job, JobContext.SIMILARITY_SEARCH, spec)
 
 thumbnails = client.get_thumbnail_images(samples=samples)
 print(f"Retrieved {len(thumbnails)} images")
 
-print("Displaying the results:")  # set save_file=None to view the image without saving:
-display_images(thumbnails, n_rows=4, n_cols=4, figure_w=5, figure_h=5, save_file="./search.jpg")
+print(
+    "Displaying the results:"
+)  # set save_file=None to view the image without saving:
+display_images(
+    thumbnails,
+    n_rows=4,
+    n_cols=4,
+    figure_w=5,
+    figure_h=5,
+    save_file="./search.jpg",
+)
 
 #######################################################################################################################
 # Save the curated data into a result-set for further processing:
@@ -146,5 +192,14 @@ result_set_samples = client.get_resultset_samples(resultset=resultset)  # type: 
 thumbnails = client.get_thumbnail_images(result_set_samples)
 print(f"Retrieved {len(thumbnails)} images from result-set")
 
-print("Display the result-set images:")  # set save_file=None to view the image without saving:
-display_images(thumbnails, n_rows=4, n_cols=4, figure_w=5, figure_h=5, save_file="./result_set.jpg")
+print(
+    "Display the result-set images:"
+)  # set save_file=None to view the image without saving:
+display_images(
+    thumbnails,
+    n_rows=4,
+    n_cols=4,
+    figure_w=5,
+    figure_h=5,
+    save_file="./result_set.jpg",
+)

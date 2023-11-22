@@ -12,9 +12,9 @@ from display_images import display_images
 
 
 sdk_config_dict = {
-  "saas_endpoint": "https://app.akridata.ai",
-  "api_key": "akridata-804b6140d095:kGgXfc2qbXrgso0f5cGzuynaCiLxLZ0fc6xvRs6eFBAu0Ykd",
-  "mode": "saas"
+    "saas_endpoint": "https://app.akridata.ai",
+    "api_key": "akridata-apikey",
+    "mode": "saas",
 }
 # Define the Data Explorer client side:
 client = AkriDEClient(sdk_config_dict=sdk_config_dict)
@@ -39,5 +39,7 @@ thumbnails = client.get_thumbnail_images(result_set_samples)
 print(f"Retrieved {len(thumbnails)} images from result-set")
 
 print("Display the result-set images:")
-display_images(thumbnails, n_rows=3, n_cols=3, figure_w=5, figure_h=5, save_file=None)
+display_images(
+    thumbnails, n_rows=3, n_cols=3, figure_w=5, figure_h=5, save_file=None
+)
 # display_images(thumbnails, n_rows=3, n_cols=3, figure_w=5, figure_h=5, save_file="./result_set.jpg")
