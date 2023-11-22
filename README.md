@@ -34,7 +34,13 @@ OS supported:
 
 **akride** installation is available on [Pypi](https://pypi.org/project/akride/) via:
 ```commandline
-pip install akride
+pip install akride['cpu']
+```
+
+or
+
+```commandline
+pip install akride['gpu']
 ```
 
 - Python version 3.8 or higher is required to run the examples in this repository.
