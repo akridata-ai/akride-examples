@@ -44,8 +44,7 @@ print(f"Dataset {dataset.get_name()} created successfully with ID {dataset.get_i
 
 #######################################################################################################################
 # 2.1 Process images:
-# path_to_images = "../dataset/voc-analyze/"
-path_to_images = "C:\\Users\\alexb\\Documents\\akride-examples\\dataset\\voc-analyze\\"
+path_to_images = "../dataset/voc-analyze/"
 task = client.ingest_dataset(dataset=dataset, data_directory=path_to_images, async_req=True)
 
 while not task.has_completed():
@@ -55,8 +54,7 @@ print("Dataset ingestion done")
 
 # 2.2 Process catalog data:
 catalog_table_name = "voc_catalog_info"
-# catalog_csv_path = "../dataset/voc-analyze/catalog/voc_catalog.csv"
-catalog_csv_path = "C:\\Users\\alexb\\Documents\\akride-examples\\dataset\\voc-analyze\\catalog\\voc_catalog.csv"
+catalog_csv_path = "../dataset/voc-analyze/catalog/voc_catalog.csv"
 is_successful: bool = client.import_catalog(dataset=dataset,
                                             csv_file_path=catalog_csv_path,
                                             file_name_column="file_path(string)",
