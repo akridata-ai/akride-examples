@@ -83,7 +83,9 @@ job_spec = client.create_job_spec(
             prediction_class_column="voc_catalog_info_pd_class(string)",
             ground_truth_coordinates_column="voc_catalog_info_gt_box(string)",
             prediction_coordinates_column="voc_catalog_info_pd_box(string)",
-        )
+        ),
+        iou_config=[0, 0.2, 0.4, 0.6, 0.8, 1],
+        confidence_config=[0, 0.1, 0.3, 0.5, 0.7, 0.9]
     ),
 )
 job = client.create_job(spec=job_spec)
