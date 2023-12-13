@@ -108,6 +108,9 @@ conf_matrix: ConfusionMatrix = \
 disp = ConfusionMatrixDisplay(conf_matrix.data, display_labels=conf_matrix.labels)
 _, ax = plt.subplots(figsize=(25, 25))
 disp.plot(ax=ax)
+# uncomment to save or display:
+# plt.savefig('./confusion_matrix.png')
+# plt.show()
 
 # 4.2. Get 2 examples of incorrect prediction:
 spec = {"true_label": "sofa", "predicted_label": "chair"}
