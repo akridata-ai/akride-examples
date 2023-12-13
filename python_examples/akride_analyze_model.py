@@ -17,7 +17,7 @@ from pandas import DataFrame
 from sklearn.metrics import ConfusionMatrixDisplay
 
 from akride import AkriDEClient
-from akride.core.enums import DataType, JobStatisticsContext, JobContext
+from akride.core.enums import DataType, JobStatisticsContext, JobContext, JobType
 from akride.core.types import AnalyzeJobParams, CatalogDetails, CatalogTable, ConfusionMatrix
 
 from display_images import display_images
@@ -73,6 +73,7 @@ client.get_all_columns(dataset=dataset, table=catalog_view)
 job_name = "voc-analyze"
 job_spec = client.create_job_spec(
     dataset=dataset,
+    job_type=JobType.ANALYZE_OBJECT_DETECTION,
     job_name=job_name,
     catalog_table=catalog_view,
     analyze_params=AnalyzeJobParams(
